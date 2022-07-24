@@ -48,7 +48,7 @@
 						<th scope="col">Name</th>
 						<th scope="col">Surname</th>
 						<th scope="col">Money</th>
-						<th scope="col"></th>
+						<th scope="col">Delete</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -58,7 +58,7 @@
 							<td>${user.name}</td>
 							<td>${user.surname}</td>
 							<td>${user.money}</td>
-							<td></td>
+							<td><a href="deleteUser?userID=${user.id}">delete</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

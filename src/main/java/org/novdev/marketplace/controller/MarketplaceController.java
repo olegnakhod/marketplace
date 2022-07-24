@@ -82,8 +82,27 @@ public class MarketplaceController {
 		return "redirect:/viewAll";
 	}
 	
+	@RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
+	public String deleteUser(
+			@RequestParam Integer userID) throws Exception {
+		
+		User user = userService.readById(userID);
+		List<Bucket> bucketWithProduct = bucketService.readAllByUserId(userID);
+		
+		if(bucketWithProduct.size() > 0) {
+			for(Bucket bucket :  bucketWithProduct) {
+				bucketService.delete(bucket);
+			}
+		}
+		
+		userService.delete(user);
+		
+		
+		return "redirect:/viewAll";
+	}
+	
 	@RequestMapping(value = "/deleteProduct", method = RequestMethod.GET)
-	public String bayProduct(
+	public String deleteProduct(
 			@RequestParam Integer productID) throws Exception {
 		
 		Product product = productService.readById(productID);

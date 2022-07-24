@@ -48,7 +48,6 @@
 								<th scope="col">Name</th>
 								<th scope="col">Price</th>
 								<th scope="col">Quantity in stock</th>
-								<th scope="col">Delete</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -58,7 +57,6 @@
 									<td>${product.name}</td>
 									<td>${product.price}</td>
 									<td>${product.quantityInStock}</td>
-									<td><a href="deleteBucket?productID=${product.id}">delete</a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
